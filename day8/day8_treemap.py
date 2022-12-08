@@ -40,16 +40,12 @@ def higher_dist(current, row, pos):
 
     for i in range(len(a)):
         a_count += 1
-        if current > a[i]:
-            pass
-        else:
+        if current <= a[i]:
             break
 
     for i in range(len(b)):
         b_count += 1
-        if current > b[i]:
-            pass
-        else:
+        if current <= b[i]:
             break
 
     return a_count * b_count
@@ -78,8 +74,7 @@ def scenic_score():
 
 if __name__ == '__main__':
     with open('input') as f:
-        data = f.read()
-        lines = data.split('\n')
+        lines = f.read().splitlines()
         for line in lines:
             treemap.append(list(map(int, [*line])))
         print(count_visibility())
